@@ -3,7 +3,7 @@ use db_generation_game_online;
 
 -- Tabela de classe
 create table tb_classe(
-id bigint(5) auto_increment,
+id bigint(6) auto_increment,
 categoria varchar(255),
 especialidade varchar(255),
 ataque varchar(255),
@@ -22,7 +22,7 @@ select * from tb_classe;
 
 -- tabela de personagem
 create table tb_personagem(
-id bigint(10) auto_increment,
+id bigint(8) auto_increment,
 nome varchar(255),
 clan varchar(255),
 genero varchar(255),
@@ -55,5 +55,6 @@ select * from tb_personagem where defesa between 1000 and 2000;
 select * from tb_personagem where nome like "G%";
 
 -- inner join
-select nome,clan,genero,nivel,poder,defesa,ataque,categoria,especialidade,itemInicial
-from tb_personagem inner join tb_classe on tb_classe.id=tb_personagem.id;
+select *from tb_personagem inner join tb_classe on tb_classe.id=tb_personagem.id;
+
+select * from tb_personagem inner join tb_classe on tb_classe.id=tb_personagem.id where tb_classe.id=1;
